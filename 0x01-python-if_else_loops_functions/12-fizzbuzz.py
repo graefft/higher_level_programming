@@ -9,5 +9,4 @@ def fizzbuzz():
             print("Buzz".format(i), end="")
         else:
             print(i, end="")
-        if (i < 100):
-            print(" ", end="")
+        print(" ", end="")

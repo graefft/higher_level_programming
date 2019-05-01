@@ -1,2 +1,2 @@
 #!/bin/bash
-python3.4 -c "$PSYCODE"
+python3.4 -c "$PYCODE"

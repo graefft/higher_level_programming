@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -8,19 +10,16 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *tort, *hare;
-
-	tort = list;
-	hare = list;
+	listint_t *tort = list, *hare = list;
 
 	if (list == NULL)
 		return (0);
 
-	while (tort && hare && hare->next)
+	while (hare && hare->next)
 	{
 		hare = hare->next->next;
 		tort = tort->next;
-		if (tort->next == hare->next)
+		if (tort == hare)
 			return (1);
 	}
 	return (0);

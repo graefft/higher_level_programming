@@ -2,11 +2,16 @@
 #include <stdlib.h>
 #include "lists.h"
 
+/**
+ * is_palindrome - checks if singly linked list is a palindrome
+ * @head: double pointer to address of head of linked list
+ * Return: 1 if palindrome, otherwise 0
+ */
+
 int is_palindrome(listint_t **head)
 {
-	int *array;
 	int length = 0;
-	int i = 0, j;
+	int i = 0, j = 0;
 	listint_t *temp;
 
 	if (!head)

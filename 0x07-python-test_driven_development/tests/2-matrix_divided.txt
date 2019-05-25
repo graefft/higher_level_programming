@@ -1,5 +1,5 @@
-The ``2-matrix_divided`` module
-===============================
+The ``2-matrix_divided`` doctest
+=================================
 
 Using ``matrix_divided``
 ------------------------
@@ -9,5 +9,53 @@ Import function from module:
 
 Test matrix with small integers:
 	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
+Test matrix when div is negative number:
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], -3)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
 
+Test matrix with negative integers and positive div:
+	>>> matrix = [
+	... [-1, -2, -3], [-4, -5, -6]]
+	>>> matrix_divided(matrix, 3)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+Test matrix with negative integers and negative div:
+	>>> matrix_divided(matrix, -3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test matrix when div is 0:
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+Test with floats:
+	>>> matrix = [
+	... [1, 2, 3.0],
+	... [4, 5, 6.0]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test with different size of matrices:
+	>>> matrix_divided([[1, 2, 3], [4, 5]], 3)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+Test with string and correct div:
+	>>> matrix_divided("Test", 3)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test with integers and string as div:
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "Hi")
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+Test with div as infinity:
+	>>> matrix_divided(matrix, 1000e1000)
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test with div as negative infinity:
+	>>> matrix_divided(matrix, -1000e1000)
+	[[-0.0, -0.0, -0.0], [-0.0, -0.0, -0.0]]

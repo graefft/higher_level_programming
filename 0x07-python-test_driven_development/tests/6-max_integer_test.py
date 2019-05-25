@@ -42,5 +42,5 @@ class TestMaxInteger(unittest.TestCase):
             self.assertEqual(max_integer([99999, 999999, 99999999]), 9999999)
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     unittest.main()

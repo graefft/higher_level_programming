@@ -48,3 +48,17 @@ Test leading space, indent character and trailing space:
 	     ?
 	<BLANKLINE>
 	<BLANKLINE>
+
+Test newline:
+	>>> text_indentation("\n")
+	<BLANKLINE>
+
+Test newlines:
+	>>> text_indentation("\n\n")
+	<BLANKLINE>
+	<BLANKLINE>
+
+Test string then newline:
+	>>> text_indentation("Hi\n\n")
+	Hi
+	<BLANKLINE>

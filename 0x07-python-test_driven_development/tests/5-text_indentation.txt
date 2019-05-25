@@ -73,14 +73,14 @@ Test string then newline:
 	<BLANKLINE>
 
 Test all new line characters:
-	>>> text_indentation("Hi: how. are. you?")
+	>>> text_indentation("Hi:how.are.you?")
 	Hi:
 	<BLANKLINE>
-	 how.
+	how.
 	<BLANKLINE>
-	 are.
+	are.
 	<BLANKLINE>
-	 you?
+	you?
 	<BLANKLINE>
 
 Test only special characters:

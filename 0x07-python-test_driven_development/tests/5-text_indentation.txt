@@ -12,7 +12,6 @@ Test empty string:
 
 Test string of spaces:
 	>>> text_indentation("     ") 
-	<BLANKLINE>
 
 Test none:
 	>>> text_indentation(None)
@@ -39,11 +38,11 @@ Test string with question mark:
 
 Test string with whitespace:
 	>>> text_indentation("     Hi")
-	     Hi
+	Hi
 
 Test string with trailing space:
 	>>> text_indentation("Hi     ")
-	Hi     
+	Hi
 
 Test string inside of indent characters:
 	>>> text_indentation("?Hello?")
@@ -54,8 +53,7 @@ Test string inside of indent characters:
 
 Test leading space, indent character and trailing space:
 	>>> text_indentation("     ?     ")
-	     ?
-	<BLANKLINE>
+	?
 	<BLANKLINE>
 
 Test newline:

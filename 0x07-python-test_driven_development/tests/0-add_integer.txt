@@ -63,6 +63,11 @@ Test one integer and one string:
 	TypeError: b must be an integer
 
 Test infinity as argument:
-	>>> add_integer(1000e1000, 42)
+	>>> add_integer(float("inf"), 42)
 	Traceback (most recent call last):
 	OverflowError: cannot convert float infinity to integer
+
+Test NaN as argument:
+	>>> add_integer(float("nan"), 42)
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer

@@ -1,0 +1,13 @@
+The ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided``
+------------------------
+
+Import function from module:
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test matrix with small integers:
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+
+

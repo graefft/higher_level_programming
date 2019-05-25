@@ -42,6 +42,17 @@ class TestMaxInteger(unittest.TestCase):
             """Test large numbers"""
             self.assertEqual(max_integer([99999, 999999, 99999999]), 99999999)
 
+        def test_none(self):
+            """Test none parameter"""
+            self.assertRaises(TypeError, max_integer, None)
+
+        def test_noparam(self):
+            """Test no parameter"""
+            self.assertRaises(TypeError, max_integer, 0)
+
+        def test_multiple_string(self):
+            """Tests multiple strings"""
+            self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
 
 if __name__ == '__main__':
     unittest.main()

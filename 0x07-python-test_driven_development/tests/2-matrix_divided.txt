@@ -52,9 +52,14 @@ Test with integers and string as div:
 	Traceback (most recent call last):
 	TypeError: div must be a number
 
-Test with one argument:
+Test with two arguments:
 	>>> matrix_divided([[3]], 2)
 	[[1.5]]
+
+Test with one argument:
+	>>> matrix_divided([[3]])
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
 Test with div as infinity:
 	>>> matrix_divided(matrix, 1000e1000)

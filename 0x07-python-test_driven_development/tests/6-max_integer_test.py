@@ -13,13 +13,17 @@ class TestMaxInteger(unittest.TestCase):
             """Test normal case"""
             self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
+        def test_out_of_order(self):
+            """Test if out of order"""
+            self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+
         def test_one(self):
             """Test one int"""
             self.assertEqual(max_integer([3]), 3)
 
         def test_empty(self):
             """Test empty list"""
-            self.assertEqual(max_integer(), None)
+            self.assertEqual(max_integer([]), None)
 
         def test_same(self):
             """Test same ints"""
@@ -37,10 +41,6 @@ class TestMaxInteger(unittest.TestCase):
         def test_negative(self):
             """Test negative int"""
             self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
-
-        def test_large(self):
-            """Test large numbers"""
-            self.assertEqual(max_integer([99999, 999999, 99999999]), 99999999)
 
         def test_none(self):
             """Test none parameter"""

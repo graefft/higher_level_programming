@@ -1,0 +1,53 @@
+The ``3-say_my_name`` doctest
+=============================
+
+Using ``say_my_name``
+---------------------
+
+Import function from module:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test two normal strings:
+	>>> say_my_name("Thomas", "Graeff")
+	My name is Thomas Graeff
+
+Test non-string first and string last:
+	>>> say_my_name(10, "Graeff")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Test string first and non-string last:
+	>>> say_my_name("Thomas", 10)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+Test two non-strings:
+	>>> say_my_name(10, 10)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Test empty first string:
+	>>> say_my_name("", "Graeff")
+	My name is  Graeff
+
+Test empty second string:
+	>>> say_my_name("Thomas", "")
+	My name is Thomas 
+
+Test two empty strings:
+	>>> say_my_name("", "")
+	My name is  
+
+Test string of numbers:
+	>>> say_my_name("1234", "5678")
+	My name is 1234 5678
+
+Test string of whitespace:
+	>>> say_my_name("     ", "Graeff")
+	My name is       Graeff
+
+Test last_name as whitespace:
+	>>> say_my_name("Thomas", "")
+	My name is Thomas 
+
+ 

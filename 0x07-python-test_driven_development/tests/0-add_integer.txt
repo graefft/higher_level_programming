@@ -31,6 +31,14 @@ Test one negative integer:
 	>>> add_integer(-2)
 	96
 
+Test one negative and one positive integer:
+	>>> add_integer(-2, 2)
+	0
+
+Test one negative and one positive float:
+	>>> add_integer(-2.1, 2.2)
+	0
+
 Test two negative floats:
 	>>> add_integer(-2.2, -3.3)
 	-5
@@ -38,3 +46,23 @@ Test two negative floats:
 Test one negative float:
 	>>> add_integer(-2.9)
 	96
+
+Test no arguments:
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 'None' as argument:
+	>>> add_integer(None, 2)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+Test one integer and one string:
+	>>> add_integer(1, "Holberton")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+Test infinity as argument:
+	>>> add_integer(1000e1000, 42)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer

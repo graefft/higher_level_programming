@@ -45,7 +45,3 @@ Test string of numbers:
 Test string of whitespace:
 	>>> say_my_name("     ", "Graeff")
 	My name is       Graeff
-
-Test last_name as whitespace:
-	>>> say_my_name("Thomas", "")
-	My name is Thomas 

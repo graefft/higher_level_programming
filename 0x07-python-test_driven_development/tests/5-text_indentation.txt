@@ -62,3 +62,14 @@ Test string then newline:
 	>>> text_indentation("Hi\n\n")
 	Hi
 	<BLANKLINE>
+
+Test all new line characters:
+	>>> text_indentation("Hi: how. are. you?")
+	Hi:
+	<BLANKLINE>
+	 how.
+	<BLANKLINE>
+	 are.
+	<BLANKLINE>
+	 you?
+	<BLANKLINE>

@@ -73,3 +73,24 @@ Test all new line characters:
 	<BLANKLINE>
 	 you?
 	<BLANKLINE>
+
+Test only special characters:
+	>>> text_indentation(":.?")
+	:
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+
+Test special characters with \n:
+	>>> text_indentation(":\n.\n?\n")
+	:
+	<BLANKLINE>
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	<BLANKLINE>

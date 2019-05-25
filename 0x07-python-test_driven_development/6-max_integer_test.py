@@ -12,6 +12,10 @@ class TestMaxInteger(unittest.TestCase):
             """Test normal case"""
             self.assertEqual(max_integer([1, 2, 3, 4], 4)
 
+        def test_one(self):
+            """Test one int"""
+            self.assertEqual(max_integer([3], 1)
+
         def test_empty(self):
             """Test empty list"""
             self.assertEqual(max_integer(), None)

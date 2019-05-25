@@ -34,6 +34,10 @@ Test empty second string:
 	>>> say_my_name("Thomas", "")
 	My name is Thomas 
 
+Test one string:
+	>>> say_my_name("Thomas")
+	My name is Thomas 
+
 Test two empty strings:
 	>>> say_my_name("", "")
 	My name is  

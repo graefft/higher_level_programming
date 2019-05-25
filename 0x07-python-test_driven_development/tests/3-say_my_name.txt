@@ -48,4 +48,4 @@ Test string of whitespace:
 
 Test last_name as whitespace:
 	>>> say_my_name("Thomas", "")
-	My name is Thomas  
+	My name is Thomas 

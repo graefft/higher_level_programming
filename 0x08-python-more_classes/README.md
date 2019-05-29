@@ -15,3 +15,6 @@ FILE | DESCRIPTION
 [7. Change Representation](./7-rectangle.py) | Class 'Rectangle' based on 6 that has public class attribute print_symbol used as symbol for string representation (initialized to '#')
 [8. Compare Rectangles](./8-rectangle.py) | Class 'Rectangle' based on 7 that adds static method bigger_or_equal(rect_1, rect_2) that returns the biggest rectangle based on area
 [9. A Square is a Rectangle](./9-rectangle) | Class 'Rectangle' based on 8 that adds class method square(cls, size=0) that returns new Rectangle instance with width == height == size
+
+### Author
+Thomas Graeff

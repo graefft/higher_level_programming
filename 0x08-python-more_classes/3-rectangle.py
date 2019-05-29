@@ -41,15 +41,16 @@ class Rectangle:
 
     def perimeter(self):
         """Perimeter public instance method"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.height + self.width) * 2)
 
     def __str__(self):
         """Return str with character '#'"""
         string = ''
-        for height in range(self.height):
-            for width in range(self.width):
-                string += '#'
-            string += '\n'
-        return (string[:-1])
+        if self.width > 0 and self.height > 0:
+            for height in range(self.__height):
+                for width in range(self.__width):
+                    string += '#'
+                string += '\n'
+        return (string[: -1])

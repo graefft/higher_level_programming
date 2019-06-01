@@ -34,9 +34,9 @@ Test empty m_b[[]]:
 Test different lengths of m_a:
 	>>> matrix_mul([[1, 2, 3], [4, 5]], [[6, 7, 8], [8, 9, 10]])
 	Traceback (most recent call last):
-	ValueError: m_a and m_b can't be multiplied
+	TypeError: each row of m_a must should be of the same size
 
 Test different lengths of m_b:
 	>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[5, 6, 7], [8, 9]])
 	Traceback (most recent call last):
-	ValueError: m_a and m_b can't be multiplied
+	TypeError: each row of m_b must should be of the same size

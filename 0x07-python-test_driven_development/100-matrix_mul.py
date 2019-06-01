@@ -18,6 +18,14 @@ def matrix_mul(m_a, m_b):
         raise ValueError('m_a can\'t be empty')
     if m_b == 0 or m_b is None or m_b == [[]] or (len(m_b) == 0):
         raise ValueError('m_b can\'t be empty')
+
+    for row in m_a:
+        if len(m_a[0]) != len(row):
+            raise TypeError('each row of m_a must should be of the same size')
+    for row in m_b:
+        if len(m_b[0]) != len(row):
+            raise TypeError('each row of m_b must should be of the same size')
+
     for row in m_a:
         for x in row:
             if not isinstance(x, (int, float)):

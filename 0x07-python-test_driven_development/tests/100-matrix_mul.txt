@@ -11,6 +11,11 @@ Normal case with two matrices:
 	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 	[[7, 10], [15, 22]]
 
+Test one argument:
+	>>> matrix_mul()
+	Traceback (most recent call last):
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
 Test empty matrices:
 	>>> matrix_mul([], [])
 	Traceback (most recent call last):
@@ -40,6 +45,11 @@ Test different lengths of m_b:
 	>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[5, 6, 7], [8, 9]])
 	Traceback (most recent call last):
 	TypeError: each row of m_b must should be of the same size
+
+Test 1st arg string:
+	>>> matrix_mul("Holberton", [[4, 5], [6, 7]])
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
 
 Test 2nd arg string:
         >>> matrix_mul([[5, 6], [7, 8]], "Holberton")

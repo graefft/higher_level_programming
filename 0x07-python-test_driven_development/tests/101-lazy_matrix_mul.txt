@@ -19,64 +19,64 @@ Test one argument:
 
 Test empty matrices:
 	>>> matrix_mul([], [])
-	False
+	0.0
 
 Test just empty m_b:
 	>>> matrix_mul([[1, 2], [3, 4]], [])
 	Traceback (most recent call last):
-	ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 0 is different from 2)
 
 Test empty m_a[[]]:
 	>>> matrix_mul([[]], [[4, 5], [6, 7]])
 	Traceback (most recent call last):
-	ValueError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 0)
 
 Test empty m_b[[]]:
 	>>> matrix_mul([[1, 2], [3, 4]], [[]])
 	Traceback (most recent call last):
-	ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
 
 Test different lengths of m_a:
 	>>> matrix_mul([[1, 2, 3], [4, 5]], [[6, 7, 8], [8, 9, 10]])
 	Traceback (most recent call last):
-	ValueError: setting an array element with a sequence.
+	TypeError: ufunc 'matmul' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
 
 Test different lengths of m_b:
 	>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[5, 6, 7], [8, 9]])
 	Traceback (most recent call last):
-	ValueError: setting an array element with a sequence.
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
 
 Test 1st arg string:
 	>>> matrix_mul("Holberton", [[4, 5], [6, 7]])
 	Traceback (most recent call last):
-	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+	ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
 
 Test 2nd arg string:
         >>> matrix_mul([[5, 6], [7, 8]], "Holberton")
 	Traceback (most recent call last):
-	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+	ValueError: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
 
 Test different number of matrix:
 	>>> matrix_mul([[1, 2], [3, 4]], [[5, 6]])
 	Traceback (most recent call last):
-	ValueError: shapes (2,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
 
 Test list of string m_a:
 	>>> matrix_mul([["Holberton", "School"], ["is", "cool"]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
-	ValueError: data type must provide an itemsize
+	TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
 
 Test list of string m_b:
 	>>> matrix_mul([[1, 2], [3, 4]], [["Holberton", "School"], ["is", "cool"]])
 	Traceback (most recent call last):
-	ValueError: data type must provide an itemsize
+	TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
 
 Test list of ints for m_a:
 	>>> matrix_mul([1, 2, 3, 4], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
-	ValueError: shapes (4,) and (2,2) not aligned: 4 (dim 0) != 2 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 4)
 
 Test list of ints for m_b:
 	>>> matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
 	Traceback (most recent call last):
-	ValueError: shapes (2,2) and (4,) not aligned: 2 (dim 1) != 4 (dim 0)
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 4 is different from 2)

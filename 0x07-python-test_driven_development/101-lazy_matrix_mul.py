@@ -2,10 +2,9 @@
 """Module for multiplying 2 matrices using NumPy"""
 
 
-import numpy as np
+import numpy
 
 
 def lazy_matrix_mul(m_a, m_b):
     """Function to multiply 2 matrices using NumPy"""
-    result = np.matmul(m_a, m_b)
-    return (result)
+    return (numpy.matmul(m_a, m_b))

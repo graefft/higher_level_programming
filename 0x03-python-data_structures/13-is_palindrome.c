@@ -37,7 +37,7 @@ int is_palindrome(listint_t **head)
 }
 
 /**
- *  reverse - reverses linked list
+ *  reverse_list - reverses linked list
  *  @head: double pointer to address of head
  *  Return: pointer to first node of reversed list
  */

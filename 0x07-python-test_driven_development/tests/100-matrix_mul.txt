@@ -60,3 +60,23 @@ Test different number of matrix:
 	>>> matrix_mul([[1, 2], [3, 4]], [[5, 6]])
 	Traceback (most recent call last):
 	ValueError: m_a and m_b can't be multiplied
+
+Test list of string m_a:
+	>>> matrix_mul([["Holberton", "School"], ["is", "cool"]], [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
+
+Test list of string m_b:
+	>>> matrix_mul([[1, 2], [3, 4]], [["Holberton", "School"], ["is", "cool"]])
+	Traceback (most recent call last):
+	TypeError: m_b should contain only integers or floats
+
+Test list of ints for m_a:
+	>>> matrix_mul([1, 2, 3, 4], [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists
+
+Test list of ints for m_b:
+	>>> matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
+	Traceback (most recent call last):
+	TypeError: m_b must be a list of lists

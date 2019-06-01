@@ -5,9 +5,9 @@
 def matrix_mul(m_a, m_b):
     """Function to multiply two matrices"""
     if type(m_a) is not list:
-        raise TypeError('m_a must be a list of lists')
+        raise TypeError('m_a must be a list')
     if type(m_a) is not list:
-        raise TypeError('m_b must be a list of lists')
+        raise TypeError('m_b must be a list')
     for x in m_a:
         if type(x) is not list:
             raise TypeError('m_a must be a list of lists')

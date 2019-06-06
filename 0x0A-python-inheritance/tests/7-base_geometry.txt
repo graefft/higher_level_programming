@@ -69,6 +69,16 @@ Test if value is list value:
 	Traceback (most recent call last):
 	TypeError: list must be an integer
 
+Test if value is two in a list:
+	>>> bg.integer_validator("list", [1, 2])
+	Traceback (most recent call last):
+	TypeError: list must be an integer
+
+Test for NaN:
+	bg.integer_validator("naan", float('nan'))
+	Traceback (most recent call last):
+	TypeError: naan miust be an integer
+
 Test if float is a float:
 	>>> bg.integer_validator("float", 4.5)
 	Traceback (most recent call last):

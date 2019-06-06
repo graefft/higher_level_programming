@@ -14,19 +14,6 @@ Test for type:
 	>>> type(bg) is BaseGeometry
 	True
 
-area() instance tests
----------------------
-Test area() with no arguments:
-	>>> bg.area()
-	Traceback (most recent call last):
-	Exception: area() is not implemented
-
-Test area() with one argument:
-	>>> bg.area(4)
-	Traceback (most recent call last):
-	TypeError: area() takes 1 positional argument but 2 were given
-
-
 integer_validator() instance tests
 ----------------------------------
 Test no arguments:

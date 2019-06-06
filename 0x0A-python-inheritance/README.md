@@ -6,6 +6,7 @@ Solved tasks from Holberton School's Higher-Level Programming curriculum
 ### Language
 Python 3 (PEP8 v.1.7 style)
 
+### Files Used in this Project
 FILE | DESCRIPTION
 ----|----
 [0. Lookup](./0-lookup.py) | Function that returns the list of available attributes and methods of an object
@@ -20,6 +21,9 @@ FILE | DESCRIPTION
 [9. Full Rectangle](./9-rectangle.py) | Adds instantiation with width and height to rectangle
 [10. Square #1](./10-square.py) | Class Square that inherits from Rectangle
 [11. Square #2](./11-square.py) | Adds print() and str() to Square #1
+[12. My Integer](./100-my_int.py) | Class MyInt inherits from built-in 'int' but switches == and !=
+[13. Can I?](.101-add_attribute) | Function that adds a new attribute
+
 
 ### Author
 Thomas Graeff

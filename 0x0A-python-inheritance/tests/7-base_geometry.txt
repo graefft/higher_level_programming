@@ -14,6 +14,11 @@ Test for type:
 	>>> type(bg) is BaseGeometry
 	True
 
+Test area() with no arguments:
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
 integer_validator() instance tests
 ----------------------------------
 Test no arguments:

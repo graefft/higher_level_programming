@@ -7,8 +7,13 @@ Using ``1-my_list``
 Import function:
 	>>> MyList = __import__('1-my_list').MyList
 
-Test for subclass
+Test for subclass:
 	>>> issubclass(MyList, list)
+	True
+
+Test for isinstance:
+	>>> my_list = MyList()
+	>>> isinstance(my_list, list)
 	True
 
 Test empty list:
@@ -19,6 +24,11 @@ Test empty list:
 	[]
 	>>> my_list.print_sorted()
 	[]
+
+Test print_sorted with one argument:
+	>>> my_list.print_sorted([3])
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 Append normal integers to list:
 	>>> my_list.append(1)

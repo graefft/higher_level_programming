@@ -1,0 +1,45 @@
+```The '7-base_geometry' doctest```
+===================================
+
+Using '7-base_geometry'
+-----------------------
+
+Import module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Set bg equal to BaseGeometry():
+	>>> bg = BaseGeometry()
+
+Test no arguments:
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test 1 agrument:
+	>>> bg.integer_validator("name")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test if name is integer:
+	>>> bg.integer_validator("my_int", 12)
+
+Test if name is string:
+	>>> try:
+	...	bg.integer_validator("name", "Thomas")
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] name must be an integer
+
+Test if age is 0:
+	>>> try:
+	...	bg.integer_validator("age", 0)
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	[ValueError] age must be greater than 0
+
+Test if distance is below 0:
+	>>> try:
+	...	bg.integer_validator("distance", -4)
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	[ValueError] distance must be greater than 0

@@ -10,6 +10,25 @@ Import module:
 Set bg equal to BaseGeometry():
 	>>> bg = BaseGeometry()
 
+Test for type:
+	>>> type(bg) is BaseGeometry
+	True
+
+area() instance tests
+---------------------
+Test area() with no arguments:
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+Test area() with one argument:
+	>>> bg.area(4)
+	Traceback (most recent call last):
+	TypeError: area() takes 1 positional argument but 2 were given
+
+
+integer_validator() instance tests
+----------------------------------
 Test no arguments:
 	>>> bg.integer_validator()
 	Traceback (most recent call last):
@@ -43,3 +62,18 @@ Test if distance is below 0:
 	... except Exception as e:
 	...	print("[{}] {}".format(e.__class__.__name__, e))
 	[ValueError] distance must be greater than 0
+
+Test if argument is None:
+	>>> bg.integer_validator("argument", None)
+	Traceback (most recent call last):
+	TypeError: argument must be an integer
+
+Test if value is list value:
+	>>> bg.integer_validator("list", [3])
+	Traceback (most recent call last):
+	TypeError: list must be an integer
+
+Test if float is a float:
+	>>> bg.integer_validator("float", 4.5)
+	Traceback (most recent call last):
+	TypeError: float must be an integer

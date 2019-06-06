@@ -75,3 +75,18 @@ Test if float is a float:
 	>>> bg.integer_validator("float", 4.5)
 	Traceback (most recent call last):
 	TypeError: float must be an integer
+
+Test for comma:
+	>>> bg.integer_validator("comma", (4,))
+	Traceback (most recent call last):
+	TypeError: comma must be an integer
+
+Test for boolean:
+	>>> bg.integer_validator("boolean", True)
+	Traceback (most recent call last):
+	TypeError: boolean must be an integer
+
+Test for list:
+	>>> bg.integer_validator("listy", {3, 4})
+	Traceback (most recent call last):
+	TypeError: listy must be an integer

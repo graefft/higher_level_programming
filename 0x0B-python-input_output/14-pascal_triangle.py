@@ -11,10 +11,9 @@ def pascal_triangle(n):
         return (return_list)
     for i in range(n):
         row = [1]
-        if return_list:  # checks for second row
-            last_row = return_list[-1]  # reference previous row
+        if return_list:
+            last_row = return_list[-1]
             row.extend([sum(pair) for pair in zip(last_row, last_row[1:])])
-            #zip stops at shortest iterable (sliding window)
             row.append(1)
         return_list.append(row)
     return (return_list)

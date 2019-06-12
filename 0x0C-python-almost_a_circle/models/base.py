@@ -2,7 +2,7 @@
 """Module for Base Class"""
 
 
-class Base:
+class Base():
     """first class Base"""
     __nb_objects = 0
 

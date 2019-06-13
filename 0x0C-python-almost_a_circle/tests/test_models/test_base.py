@@ -102,7 +102,7 @@ class TestBase(unittest.TestCase):
 
     def test_2_json_2(self):
         """test to_json_string with NaN"""
-        with self.assertRaises(TypeError) as e:    
+        with self.assertRaises(TypeError) as e:
             json_dict = Base.to_json_string(float('NaN'))
         self.assertEqual(str(e.exception), "object of type \'float\'" +
                          " has no len()")

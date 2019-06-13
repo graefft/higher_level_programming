@@ -52,11 +52,8 @@ class Base():
             with open(cls.__name__ + ".json", 'r', encoding='utf-8') as f:
                 list_dict = cls.from_json_string(f.read())
                 for dict in list_dict:
-                    list_dict = {}
-                    for key, value in dict.items():
-                        list_dict[key] = value
-                    return_dict.append(cls.create(**list_dict))
-                return (return_dict)
+                    return_dict.append(cls.create(**dict))
+        return (return_dict)
 
     @classmethod
     def create(cls, **dictionary):

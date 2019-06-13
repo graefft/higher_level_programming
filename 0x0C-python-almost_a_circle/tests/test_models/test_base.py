@@ -119,3 +119,6 @@ class TestBase(unittest.TestCase):
         Base.save_to_file([])
         with open('Base.json', 'r') as f:
             self.assertEqual(f.read(), "[]")
+
+if __name__ == '__main__':
+    unittest.main()

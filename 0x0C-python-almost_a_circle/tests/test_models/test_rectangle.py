@@ -201,3 +201,6 @@ class TestRectangle(unittest.TestCase):
         rb = Rectangle.create(**ra)
         self.assertEqual(str(rb), '[Rectangle] (1) 5/6 - 10/2')
         self.assertIsNot(ra, rb)
+
+if __name__ == '__main__':
+    unittest.main()

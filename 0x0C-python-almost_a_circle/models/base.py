@@ -18,6 +18,10 @@ class Base():
             Base.__nb_objects += 1
             self.id = self.__nb_objects
 
+    def initialize():
+        """initializes objects for tests"""
+        Base.__nb_objects = 0
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns JSON string representation of list_dictionaries"""

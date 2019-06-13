@@ -26,3 +26,15 @@ class Square(Rectangle):
         """override __str__ method"""
         return ('[Square] ({:d}) {:d}/{:d} - {:d}'.format(
             self.id, self.x, self.y, self.width))
+
+    @property
+    def size(self):
+        """Public getter for size"""
+        return (self.width)
+
+    @size.setter
+    def size(self, value):
+        """size setter for Square"""
+        self.width = value
+        self.height = value
+

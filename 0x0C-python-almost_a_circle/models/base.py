@@ -3,6 +3,7 @@
 
 
 import json
+import os
 
 
 class Base():
@@ -42,3 +43,27 @@ class Base():
                 list_dict += [i.to_dictionary()]
         with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
             f.write(cls.to_json_string(list_dict))
+
+    @classmethod
+    def load_from_file(cls):
+        """returns list of instances"""
+        return_dict = []
+        if os.path.exists(cls.__name__ + ".json"):
+            with open(cls.__name__ + ".json", 'r', encoding='utf-8') as f:
+                list_dict = cls.from_json_string(f.read())
+                for dict in list_dict:
+                    list_dict = {}
+                    for key, value in dict.items():
+                        list_dict[key] = value
+                    return_dict.append(cls.create(**list_dict))
+                return (return_dict)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if cls.__name__ is 'Rectangle':
+            obj = cls(4, 2)
+        if cls.__name__ is 'Square':
+            obj = cls(6)
+        obj.update(**dictionary)
+        return (obj)

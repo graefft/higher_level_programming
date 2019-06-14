@@ -220,9 +220,11 @@ class TestSquare(unittest.TestCase):
 
     def test_square_save_to_file_none(self):
         '''test Square save_to_file with None'''
-        Square.save_to_file(None)
-        with open('Square.json', 'r') as f:
-            self.assertEqual("[]", f.read())
+        with self.assertRaises(TypeError) as e:
+            Square.save_to_file()
+        s = ("save_to_file() missing 1 required positional" +
+             " argument: 'list_objs'")
+        self.assertEqual(str(e.exception), s)
 
     def test_square_save_to_file_empty(self):
         '''test Square save_to_file with []'''

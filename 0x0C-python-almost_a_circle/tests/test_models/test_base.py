@@ -117,6 +117,26 @@ class TestBase(unittest.TestCase):
         json_dict = Base.to_json_string([])
         self.assertEqual(json_dict, "[]")
 
+    def test_2_json_5(self):
+        '''test to_json_string with None'''
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        with self.assertRaises(TypeError) as e:
+            Base.to_json_string()
+        string = ("to_json_string() missing 1 required positional argument:" +
+                  " 'list_dictionaries'")
+
+    def test_2_json_6(self):
+        '''test to_json_string with dictionary'''
+        d = [{'id': 123, 'width': 1, 'height': 1}]
+        self.assertEqual(len(Base.to_json_string(d)), len(str(d)))
+
+    def test_2_json_7(self):
+        '''test to_json_string with dictionary'''
+        d = [{'id': 123}]
+        self.assertEqual(Base.to_json_string(d), '[{\"id\": 123}]')
+
+    # ---------------------SAVE TO FILE--------------------
     def test_3_save_to_1(self):
         """test save_to_file with no arguments"""
         with self.assertRaises(TypeError) as e:

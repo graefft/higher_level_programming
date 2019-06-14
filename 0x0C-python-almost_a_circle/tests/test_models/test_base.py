@@ -107,6 +107,16 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(e.exception), "object of type \'float\'" +
                          " has no len()")
 
+    def test_2_json_3(self):
+        '''test to_json_string with dict'''
+        json_dict = Base.to_json_string({'id': 123})
+        self.assertEqual(json_dict, '{\"id\": 123}')
+
+    def test_2_json_4(self):
+        '''test to_json_string with []'''
+        json_dict = Base.to_json_string([])
+        self.assertEqual(json_dict, "[]")
+
     def test_3_save_to_1(self):
         """test save_to_file with no arguments"""
         with self.assertRaises(TypeError) as e:

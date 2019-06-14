@@ -2,9 +2,11 @@
 """Unittest for Base class"""
 
 import json
+import os
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -136,6 +138,19 @@ class TestBase(unittest.TestCase):
         d = [{'id': 123}]
         self.assertEqual(Base.to_json_string(d), '[{\"id\": 123}]')
 
+    def test_2_json_8(self):
+        '''test to_json_string with dictionary'''
+        r = Rectangle(1, 2, 3, 4, 5)
+        d = r.to_dictionary()
+        s = Base.to_json_string([d])
+        self.assertEqual(d, {'id': 5, 'x': 3, 'y': 4, 'width': 1, 'height': 2})
+        self.assertEqual(json.loads(s), [d])
+
+    def test_2_json_9(self):
+        '''test to_json_string with None dict'''
+        d = Base.to_json_string([])
+        self.assertEqual(d, "[]")
+
     # ---------------------SAVE TO FILE--------------------
     def test_3_save_to_1(self):
         """test save_to_file with no arguments"""
@@ -149,6 +164,28 @@ class TestBase(unittest.TestCase):
         Base.save_to_file([])
         with open('Base.json', 'r') as f:
             self.assertEqual(f.read(), "[]")
+
+    def test_3_save_to_3(self):
+        '''test save_to_file with None'''
+        Rectangle.save_to_file(None)
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(json.loads(f.read()), [])
+            os.remove('Rectangle.json')
+
+        Rectangle.save_to_file([])
+        with open('Rectangle.json', 'r') as f:
+            self.assertEqual(json.loads(f.read()), [])
+
+    def test_3_save_to_4(self):
+        '''test save_to_file with None for Square'''
+        Square.save_to_file(None)
+        with open('Square.json', 'r') as f:
+            self.assertEqual(json.loads(f.read()), [])
+            os.remove('Square.json')
+
+        Square.save_to_file([])
+        with open('Square.json', 'r') as f:
+            self.assertEqual(json.loads(f.read()), [])
 
 if __name__ == '__main__':
     unittest.main()

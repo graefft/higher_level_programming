@@ -2,10 +2,12 @@
 """This module is for Rectangle unittests"""
 
 
+import io
 import json
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from contextlib import redirect_stdout
 
 
 class TestRectangle(unittest.TestCase):
@@ -181,7 +183,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_save_to_file_none(self):
         '''test save_to_file with None'''
-        Rectangle.save_to_file(None)
+        r_dict = None
+        Rectangle.save_to_file(r_dict)
         with open("Rectangle.json", 'r') as f:
             self.assertEqual("[]", f.read())
 
@@ -201,6 +204,34 @@ class TestRectangle(unittest.TestCase):
         rb = Rectangle.create(**ra)
         self.assertEqual(str(rb), '[Rectangle] (1) 5/6 - 10/2')
         self.assertIsNot(ra, rb)
+
+    def test_display(self):
+        '''test display with normal parameters'''
+        rec = Rectangle(1, 1)
+        hi = io.StringIO()
+        with redirect_stdout(hi):
+            rec.display()
+        dis = '#\n'
+        self.assertEqual(hi.getvalue(), dis)
+
+    def test_display_no_param(self):
+        '''test display without x and y'''
+        with self.assertRaises(TypeError) as e:
+            Rectangle.display()
+        s = "display() missing 1 required positional argument: 'self'"
+        self.assertEqual(str(e.exception), s)
+
+    def test_display_no_y(self):
+        '''test display with one parameter'''
+        rec = Rectangle(2, 2, 1)
+        hi = io.StringIO()
+        with redirect_stdout(hi):
+            rec.display()
+        dis = """\
+ ##
+ ##
+"""
+        self.assertEqual(hi.getvalue(), dis)
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Python script to list State objects from hbtn_0e_6_usa with letter a'''
+'''Script to print State objects from hbtn_0e_6_usa with name argument'''
 
 
 from sys import argv

@@ -1,7 +1,5 @@
 # 0x10. Python - Network #0
 
------
-
 ## Description
 Scripts from Holberton School's Higher-Level Programming - Python curriculum
 

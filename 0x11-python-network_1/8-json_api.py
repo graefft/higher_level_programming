@@ -16,6 +16,6 @@ if __name__ == '__main__':
         if len(response) == 0:
             print('No result')
         else:
-            print('[{}] <{}>'.format(response.get('id'), response.get('name')))
+            print('[{}] {}'.format(response.get('id'), response.get('name')))
     except:
         print('Not a valid JSON')

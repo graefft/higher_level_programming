@@ -11,9 +11,5 @@ if __name__ == '__main__':
     response = request.json()
     count = response.get('count')
     print('Number of results: {}'.format(count))
-    try:
-        for i in range(count):
-            result = response.get('results')[i].get('name')
-            print('{}'.format(result))
-    except:
-        pass
+    for i in response.get('results'):
+        print(i.get('name'))

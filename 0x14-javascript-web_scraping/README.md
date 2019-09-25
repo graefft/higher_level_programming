@@ -21,5 +21,7 @@ FILE | DESCRIPTION
 [8. Right Order](./101-starwars_characters.js) | Script that prints all characters of a Star Wars movie displaying one character name by line in same order as response
 [9. Twitter Auth](./102-search_twitter.js) | Script that takes in 3 strings and sends a search request to the Twitter API
 
+----
+
 ### Author
 Thomas Graeff

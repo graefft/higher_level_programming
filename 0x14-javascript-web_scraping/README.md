@@ -9,6 +9,7 @@ How to manipulate JSON data, how to use `request` and fetch API, and how to read
 ### Files Used in this Project
 
 FILE | DESCRIPTION
+----|----
 [0. Readme](./0-readme.js) | Script that reads and prints the content of a file
 [1. Write Me](./1-writeme.js) | Script that writes a string to a file
 [2. Status Code](./2-statuscode.js) | Script that displays the status code of a `GET` request

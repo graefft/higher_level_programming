@@ -4,17 +4,17 @@
 Solved tasks from Holberton School's Higher-Level Programming - Javascript curriculum
 
 ### About
-Why JQuery makes front-end programming easy
-How to select HTML elements in Javascript
-How to select HTML elements with JQuery
-Differences between `ID`, `class`, and `tag name` selectors
-How to modify an HTML element style
-How to get and update an HTML element content
-How to modify the DOM
-How to make a `GET` request with JQuery Ajax
-How to make a `POST` request with JQuery Ajax
-How to listen/bind to DOM events
-How to listen/bind to user events
+Why JQuery makes front-end programming easy  
+How to select HTML elements in Javascript  
+How to select HTML elements with JQuery  
+Differences between `ID`, `class`, and `tag name` selectors  
+How to modify an HTML element style  
+How to get and update an HTML element content  
+How to modify the DOM  
+How to make a `GET` request with JQuery Ajax  
+How to make a `POST` request with JQuery Ajax  
+How to listen/bind to DOM events  
+How to listen/bind to user events  
 
 ### Files Used in this Project
 
